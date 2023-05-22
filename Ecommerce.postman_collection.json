@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "fde6756b-e0f3-48c3-b449-d0c871eb55c2",
+		"name": "Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25670466"
+	},
+	"item": [
+		{
+			"name": "brand",
+			"item": [
+				{
+					"name": "BrandList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/BrandList",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"BrandList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "CategoryList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/CategoryList",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"CategoryList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "UserLogin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/UserLogin/saikat.k.k.aiub@gmail.com",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"UserLogin",
+								"saikat.k.k.aiub@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyLogin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/VerifyLogin/saikat.k.k.aiub@gmail.com/8133",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"VerifyLogin",
+								"saikat.k.k.aiub@gmail.com",
+								"8133"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProfile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Saikat\",\r\n    \"lastName\":\"Saha\",\r\n    \"mobile\":\"01749465355\",\r\n    \"city\":\"Dhaka\",\r\n    \"shippingAddress\":\"Narsingdi,Dhaka\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/CreateProfile",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"CreateProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadProfile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE}}/ReadProfile",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"ReadProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "ListProductByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/ListProductByCategory/6",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"ListProductByCategory",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListProductByBrand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/ListProductByBrand/3",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"ListProductByBrand",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListProductByRemark",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/ListProductByRemark/special",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"ListProductByRemark",
+								"special"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductDetailsById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/ProductDetailsById/2",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"ProductDetailsById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProductReview",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry.\",\r\n    \"product_id\":7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/CreateProductReview",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"CreateProductReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListReviewByProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/ListReviewByProduct/7",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"ListReviewByProduct",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListProductSlider",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/ListProductSlider",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"ListProductSlider"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductWishList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE}}/ProductWishList",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"ProductWishList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateWishList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE}}/CreateWishList/99",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"CreateWishList",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateCartList",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\":4,\r\n    \"color\":\"Red\",\r\n    \"size\":\"X\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/CreateCartList",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"CreateCartList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CartList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE}}/CartList",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"CartList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCartList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE}}/DeleteCartList/20",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"DeleteCartList",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE",
+			"value": "https://craftybay.teamrabbil.com/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJVc2VyRW1haWwiOiJzYWlrYXQuay5rLmFpdWJAZ21haWwuY29tIiwiaWF0IjoxNjg0NTAxNzIyLCJuYmYiOjE2ODQ1MDE3MjUsImV4cCI6MTY4NDU4ODEyMn0.PQhxW2G0oYpAUSrFyXijNq0c37cFyHIMsoSnWA8qvmU",
+			"type": "string"
+		}
+	]
+}
